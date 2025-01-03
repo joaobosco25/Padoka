@@ -14,6 +14,7 @@
         
         
         header {
+            padding: 20px;
             display: flex;
             align-items: center;
             padding: 20px 10px;
@@ -99,7 +100,7 @@
     main {
         display: flex;
         gap: 20px;
-        padding: 20px;
+        padding: 40px;
         background: -webkit-linear-gradient(rgba(245, 48, 228, 0.822), rgb(240, 157, 80), rgb(243, 92, 142));
     }
     article {
@@ -108,8 +109,11 @@
         flex-direction: column;
         gap: 30px;
         text-align: justify;
+        font-size: 25px;
+        
     }
     article section {
+        height: 100%;
         border-radius: 20px;
         padding: 20px;
         color: white;
@@ -141,12 +145,21 @@
     }
     @media (max-width: 768px) {
     main {
-        flex-direction:row;
-        width: 50%;
+        flex-direction:column;
+        gap: 10px;
+        padding: 10px;
+    }
+    article {
+        flex: 2;
+        font-size: 20px;
     }
     aside {
-        margin-top: 20px;
-        width: 50%;
+        flex: 2;
+    }
+    aside img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
     }
 }
 
@@ -177,7 +190,7 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main>    
         <article>
             <section>
                 <h2>Compromisso</h2>
@@ -193,25 +206,7 @@
                   secreto... é puro amor. 
                 </p>
             </section>
-            <section>
-                <h2>Ingredientes</h2>
-                <p>Fazemos questão de sempre usarmos apenas
-                    os melhores ingredientes, para que o 
-                    resultado final, seja um processo mágico
-                    na boca.
-                </p>
-            </section>
-            <section>
-                <h2>Tradição</h2>
-                <p>Eu, Diana, a dona e confeiteira, tenho 
-                    mais de 30 anos de experiencia. Comecei 
-                    a cozinhar e confeitar junto com minha avó.
-                    Ela, me passou sua paixão e hoje, me dedico
-                    a criar doces e salgados dos mais variados tipos,
-                    para encantar e melhorar o dia daqueles que
-                    optam por experimentar nossas obras!
-                </p>
-            </section>
+            
         </article>
         <aside>
             <img src="./images/holandesa.jpg" alt="torta">
