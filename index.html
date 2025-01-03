@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padoka Sabor</title>
+    <style>
+          
+        body, ul {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        
+        header {
+            display: flex;
+            align-items: center;
+            padding: 20px 10px;
+            background-color: #e9892f;
+            
+        }
+        .site-name {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: pink;
+    }
+        .menu a {
+            text-decoration: none;
+            color: rgb(163, 24, 105);
+            font-weight: bold;
+            text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.548);
+            letter-spacing: 3px;
+        }
+        
+        .menu-hamburguer {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .menu-hamburguer:hover {
+            transform: scale(1.1);
+        }
+        
+        .menu-hamburguer .bar {
+            width: 40px;
+            height: 3px;
+            background-color: white;
+        }
+        .menu {
+            display: flex;
+        }
+        .menu ul {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+        }
+        @media (max-width: 768px) {
+    .menu-hamburguer {
+        display: flex;
+    }
+   
+   
+    .menu {
+        box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.356);
+        left: 0;
+        display: none;
+        flex-direction: column;
+        background-color: #f8dc3fc5;
+        color: black;
+        position: absolute;
+        top: 60px;
+        width: 200px;
+        height: 300px;
+        padding: 10px;
+        border-radius: 15px;
+        z-index: 2;
+    }
+    
+    .menu.active {
+        display: flex;
+    }
+    .menu ul {
+        flex-direction: column;
+        gap: 50px;
+        font-size: 20px;
+        padding: 10px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    }
+}
+/*-------------------AGORA, O MAIN--------------------------*/
+    main {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+        background: -webkit-linear-gradient(rgba(245, 48, 228, 0.822), rgb(240, 157, 80), rgb(243, 92, 142));
+    }
+    article {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: justify;
+    }
+    article section {
+        border-radius: 20px;
+        padding: 20px;
+        color: white;
+        background: -webkit-radial-gradient(rgb(238, 98, 175), rgb(248, 99, 124));
+    }
+    article section:hover {
+        transition: all 1s;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.37);
+        transform: scale(1.05);
+        border-radius: 35px;
+    }
+    article section h2 {
+    margin-bottom: 10px;
+    color: #ffb8ed;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.74);
+}
+    aside {
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    aside img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+    @media (max-width: 768px) {
+    main {
+        flex-direction:row;
+        width: 50%;
+    }
+    aside {
+        margin-top: 20px;
+        width: 50%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-hamburguer">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="site-name">Padoka</div>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="sobre">Sobre Nós</a>
+                </li>
+                <li>
+                    <a href="contato">Contato</a>
+                </li>
+                <li>
+                    <a href="obras">Nossas Obras</a>
+                </li>
+                <li>
+                    <a href="receitas">Dicas de Ouro</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <section>
+                <h2>Compromisso</h2>
+                <p>Nosso compromisso, é com a qualidade. Nossos
+                    doces e salgados são feitos sempre com muito
+                    carinho e fazemos questão de apenas produzir
+                  o que vamos vender no dia. Dessa forma, 
+                  sendo tudo super fresquinho e delicioso.
+                  É contra nossa política, vender algo do dia
+                  anterior, visto que nosso carinho pelo nosso
+                  cliente, não pode ser expressado 
+                  por palavras. Nosso ingrediente 
+                  secreto... é puro amor. 
+                </p>
+            </section>
+            <section>
+                <h2>Ingredientes</h2>
+                <p>Fazemos questão de sempre usarmos apenas
+                    os melhores ingredientes, para que o 
+                    resultado final, seja um processo mágico
+                    na boca.
+                </p>
+            </section>
+            <section>
+                <h2>Tradição</h2>
+                <p>Eu, Diana, a dona e confeiteira, tenho 
+                    mais de 30 anos de experiencia. Comecei 
+                    a cozinhar e confeitar junto com minha avó.
+                    Ela, me passou sua paixão e hoje, me dedico
+                    a criar doces e salgados dos mais variados tipos,
+                    para encantar e melhorar o dia daqueles que
+                    optam por experimentar nossas obras!
+                </p>
+            </section>
+        </article>
+        <aside>
+            <img src="./images/holandesa.jpg" alt="torta">
+        </aside>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
