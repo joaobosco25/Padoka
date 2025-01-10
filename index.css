@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(./assets/laranja-index.jpg.jpg);
+    overflow-x: hidden; /* Evita o scroll horizontal */
+
+}
+
+.container1 {
+    width: 100%;
+    max-width: 100%; /* Impede largura maior que o viewport */
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que elementos se ajustem em telas menores */
+    position: relative;
+    top: 13rem;
+    text-align: center;
+}
+
+.container1 h1 {
+    font-family: "Gluten", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    color: aliceblue;
+    text-shadow: 5px 5px 10px rgba(68, 45, 1, 0.795);
+    font-size: 70px;
+    word-wrap: break-word; /* Quebra palavras longas */
+}
+
+.material-symbols-outlined {
+    font-size: 50px;
+    color: white;
+}
+
+.botao {
+    display: flex;
+    position: relative;
+    width: auto;
+    height: auto;
+    top: 18rem;
+    justify-content: center;
+    text-align: center;
+}
+
+button {
+    width: 14rem;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 40px;
+    background-color: rgba(156, 231, 253, 0.5);
+    font-family: "Akaya Telivigala", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    color: orangered;
+    transition: 1s ease;
+}
+
+button:hover {
+    transform: scale(1.2);
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.459);
+}
+
+@media (max-width: 600px) {
+    .container1 {
+        top: 8rem; /* Ajusta o espaçamento em telas menores */
+    }
+
+    .container1 h1 {
+        font-size: 6rem; /* Reduz tamanho do texto */
+    }
+
+    .material-symbols-outlined {
+        font-size: 30px; /* Ajusta tamanho do ícone */
+    }
+
+    .botao {
+        top: 30rem; /* Reposiciona botão */
+    }
+
+    button {
+        width: 12rem; /* Ajusta largura do botão */
+        font-size: 24px; /* Reduz fonte */
+    }
+}
+
+@media (max-width: 460px) {
+    .container1 {
+        flex-direction: row; /* Organiza conteúdo verticalmente */
+        top: 15rem; /* Ajusta a posição */
+
+    }
+
+    .container1 h1 {
+        font-size: 50px; /* Ajusta tamanho para telas pequenas */
+    }
+
+    .material-symbols-outlined {
+        font-size: 40px;
+    }
+
+    .botao {
+        top: 20rem; /* Ajusta posição do botão */
+    }
+
+    button {
+        width: 10rem; /* Reduz botão em telas menores */
+        font-size: 20px; /* Reduz fonte do botão */
+    }
+}

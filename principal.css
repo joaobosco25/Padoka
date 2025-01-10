@@ -1,0 +1,414 @@
+body, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+
+header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    padding: 20px 10px;
+    background-color: #e9892f;
+    
+}
+.site-name {
+position: absolute;
+left: 50%;
+transform: translate(-50%);
+font-size: 1.5rem;
+font-weight: bold;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+color: pink;
+}
+.menu a {
+    text-decoration: none;
+    color: rgb(163, 24, 105);
+    font-weight: bold;
+    text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.548);
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+.menu-hamburguer:hover {
+    transform: scale(1.1);
+}
+
+.menu-hamburguer .bar {
+    width: 40px;
+    height: 3px;
+    background-color: white;
+}
+.menu {
+    display: flex;
+}
+.menu ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+@media (max-width: 768px) {
+.menu-hamburguer {
+display: flex;
+}
+
+
+.menu {
+box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.356);
+left: 0;
+display: none;
+flex-direction: column;
+background-color: #f8dc3fc5;
+color: black;
+position: absolute;
+top: 60px;
+width: 200px;
+height: 300px;
+padding: 10px;
+border-radius: 15px;
+z-index: 2;
+}
+
+.menu.active {
+display: flex;
+}
+.menu ul {
+flex-direction: column;
+gap: 50px;
+font-size: 20px;
+padding: 10px;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+}
+/*-------------------AGORA, O MAIN--------------------------*/
+main {
+display: flex;
+gap: 20px;
+padding: 40px;
+background: -webkit-linear-gradient(rgba(245, 48, 228, 0.822), rgb(240, 157, 80), rgb(243, 92, 142));
+}
+article {
+flex: 2;
+display: flex;
+flex-direction: column;
+gap: 30px;
+text-align: justify;
+font-size: 25px;
+
+}
+article section {
+text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.534);
+height: 100%;
+border-radius: 20px;
+padding: 20px;
+color: white;
+background: -webkit-radial-gradient(rgb(238, 98, 175), rgb(248, 99, 124));
+}
+article section:hover {
+transition: all 1s;
+box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.37);
+transform: scale(1.05);
+border-radius: 35px;
+}
+article section h2 {
+margin-bottom: 10px;
+color: #ffb8ed;
+text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.534);
+}
+aside {
+z-index: 1;
+flex: 1;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+}
+
+@media (max-width: 768px) {
+
+form {
+padding: 40px;
+}
+main {
+flex-direction:column;
+gap: 10px;
+padding: 10px;
+}
+article {
+flex: 2;
+font-size: 20px;
+}
+aside {
+flex: 2;
+}
+
+
+}
+.carousel {
+position: relative;
+width: 100%;
+height: 500px;
+max-width: 800px;
+margin: auto;
+overflow: hidden;
+border-radius: 15px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+body {
+background: -webkit-linear-gradient(rgb(240, 157, 80), rgba(245, 48, 91, 0.822), rgb(243, 92, 218));
+
+}
+.carousel-track {
+display: flex;
+transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+flex-shrink: 0;
+width: 100%;
+height: 100%;
+object-fit: cover; /* Preenche sem distorção */
+object-position: center;
+}
+
+.carousel-button {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background: rgba(0, 0, 0, 0.5);
+border: none;
+color: white;
+font-size: 2rem;
+padding: 10px;
+cursor: pointer;
+z-index: 10;
+border-radius: 50%;
+}
+
+.carousel-button.prev {
+left: 10px;
+}
+
+.carousel-button.next {
+right: 10px;
+}
+
+.carousel-button:hover {
+background: rgba(0, 0, 0, 0.7);
+}
+/*-----------------------Peça agora-------------------------------*/
+@media (max-width: 760px ) {
+
+.peça-agora {
+text-align: center;
+text-align: justify;
+color: white;
+word-spacing: 4px;
+letter-spacing: 1px;
+}
+.peça-agora p {
+position: relative;
+margin-left: 13px;
+margin-right: 13px;
+
+
+}
+.buti {
+background-color: #690453;
+}
+a {
+color: whitesmoke;
+text-decoration: none;
+padding: 20px;
+margin: 15px auto;
+transition: all 1s;
+}
+a:hover {color: black;
+transform: scale(1.1);
+
+}
+
+.peça-agora{
+border-radius: 20px;
+text-align: center ;
+color: aliceblue;
+text-shadow: 3px 2px 3px rgba(0, 0, 0, 0.541);
+display: flex;
+justify-content: center; /* Centraliza horizontalmente */
+align-items: center; /* (Opcional) Centraliza verticalmente */
+text-align: center; /* Para o texto, se necessário */
+flex-direction: column; /* Alinha o botão e o texto verticalmente */
+margin: 15px auto;
+font-size: 20px;
+}
+.peça-agora p {
+text-align: center justify ;
+margin: 20px;
+word-spacing: 2px;   
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+
+
+}
+/*----------------------------------------------------------------*/
+
+.formu {
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.308);
+border-radius: 20px;
+padding: 40px;
+font-size: 30px;
+justify-content: center;
+justify-items: center;
+background: linear-gradient(rgb(103, 216, 236), rgb(247, 165, 111), rgb(253, 251, 133));
+}
+.endereco {
+padding: 30px;
+text-align: center;
+font-size: 24px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+select {
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-size: 20px;
+border-radius: 20px;
+padding: 10px;
+background-color: rgb(201, 243, 229);
+}
+textbox {
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-size: 15px;
+background-color: rgb(201, 243, 229);
+
+}
+input {
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-size: 20px;
+border-radius: 20px;
+padding: 10px;
+width: 100%;
+background-color: rgb(201, 243, 229);
+}
+button {
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-size: 20px;
+border-radius: 20px;
+padding: 10px;
+background-color: rgb(201, 243, 229);
+align-items: center;
+position: relative;
+text-align: center;
+
+}
+@media (max-width: 760px ) {
+select {
+font-size: 17px;
+}
+option {
+font-size: 15px;
+border-radius: 20px;
+width: 30px;
+}
+.form-container {
+display: flex;
+flex-direction: column; /* Alinha os itens na vertical */
+gap: 10px; /* Espaçamento entre o input e o botão */
+width: 300px; /* Largura máxima */
+}
+
+
+input {
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-size: 20px;
+border-radius: 20px;
+padding: 10px;
+width: 100%;
+background-color: rgb(201, 243, 229);
+border: 1px solid #ccc;
+}
+
+button {
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-size: 20px;
+border-radius: 20px;
+padding: 10px;
+background-color: rgb(201, 243, 229);
+border: none;
+cursor: pointer;
+text-align: center;
+}
+
+button:hover {
+background-color: rgb(180, 230, 210); /* Efeito hover opcional */
+}
+
+}
+footer {
+background-color: #690453;
+background: linear-gradient(rgb(121, 43, 104), rgb(85, 24, 70), purple);
+color: #fff;
+text-align: center;
+padding: 20px;
+}
+
+.footer-container {
+max-width: 1200px;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap; /* Ajusta os itens em dispositivos menores */
+justify-content: space-between;
+align-items: center;
+gap: 20px;
+}
+
+.footer-section {
+flex: 1 1 300px; /* Cada seção ocupa 1 espaço, mínimo de 300px */
+}
+
+.footer-section h3 {
+margin-bottom: 10px;
+font-size: 18px;
+}
+
+.footer-section ul {
+list-style: none;
+padding: 0;
+}
+
+.footer-section ul li {
+margin: 5px 0;
+}
+
+.footer-section ul li a {
+text-decoration: none;
+color: #fff;
+transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+color: #1abc9c; /* Cor de destaque ao passar o mouse */
+}
+
+.social-icons a {
+margin: 0 10px;
+color: #fff;
+font-size: 20px;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+color: #1abc9c;
+}
