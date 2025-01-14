@@ -41,7 +41,7 @@ header {
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
-    transition: transform 0.3s ease-in-out;
+    transition: all 1s;
 }
 
 .menu-hamburguer:hover {
@@ -116,6 +116,21 @@ header {
     border-radius: 20px;
     text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.301);
 }
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#legenda {
+    animation: slideUp 1s ease;
+}
+
 
 #mapa {
     width: 50%;
@@ -143,7 +158,21 @@ header {
     flex-direction: row; /* Define a direção horizontal */
     align-items: center; /* Alinha os itens verticalmente */
     gap: 40px; /* Espaçamento entre os itens */
+    position: relative;
 }
+#formulario {
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slideIn 0.8s ease-out forwards;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 
 label {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -178,6 +207,25 @@ label {
 #formulario button:hover {
     background-color: #cc6f1f; /* Cor do botão ao passar o mouse */
 }
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
+  .titulo {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+  }
+  span {
+      align-self: center;
+      margin: 10px;  
+  }
+  .titulo span {
+    font-size: 50px;
+  }
 
 
 @media (max-width:460px) {
