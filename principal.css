@@ -50,6 +50,10 @@ color: pink;
 }
 .menu {
     display: flex;
+    z-index: 2;
+}
+.menu.active {
+    display: flex;
 }
 .menu ul {
     display: flex;

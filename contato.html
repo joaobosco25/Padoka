@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gluten:wght@100..900&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sedan+SC&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=favorite" />    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contato.css">
+    <title>Contate-nos</title>
+
+</head>
+<body>
+    <header>
+        <div class="menu-hamburguer">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="site-name">Padoka</div>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="sobre.html">Sobre Nós</a>
+                </li>
+                <li>
+                    <a href="contato.html">Contato</a>
+                </li>
+                <li>
+                    <a href="cardapio">Cardápio</a>
+                </li>
+                <li>
+                    <a href="receitas">Dicas</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="titulo">
+            <h1>Onde Estamos...</h1>
+        </div>
+        <section class="container1">
+            <div id="legenda">
+                <p>Localizada na Rua Conde de Araruama, no 
+                    Centro da Cidade de Macaé, nossa querida
+                    e amada Padoka, está a sua total disposição.
+                    Sempre com um sorriso no rosto, a família 
+                    Padokeza, sempre estará de braços abertos
+                    para você!
+                </p>
+            </div>
+            <div id="mapa">
+            </div>
+        </section>
+        <div class="titulo" style="font-size: 25px;">
+            <h2>Nos Contate!</h2>
+        </div>
+        <section class="container2">
+            <div id="formulario">
+                <form id="whatsapp-form">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" placeholder="Qual é seu nome?" required />
+                    <br>
+                    <label id="msg" for="message">Mensagem</label>
+                    <textarea id="message" placeholder="Fale Conosco!!" required></textarea>
+                    <br>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-section social-icons">
+          <h3>Siga-nos</h3>
+          <a href="#"><i>Facebook</i></a>
+          <a href="#"><i>Twitter</i></a>
+          <a href="#"><i>Instagram</i></a>
+          <a href="#"><i>LinkedIn</i></a>
+        </div>
+      </div>
+      <p>&copy; 2025 Todos os direitos reservados.</p>
+  <p>Rua Conde de Araruama, Centro, Macaé-RJ</p>
+      <p>Desenvolvido por BoscoDev</p>
+    </footer>
+
+    <script> const hamburguer = document.querySelector('.menu-hamburguer');
+        const menu = document.querySelector('.menu');
+        
+        hamburguer.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+           
+    </script>
+    <script>
+        // Coordenadas da sua padaria (substitua pelas reais).
+        const padariaCoords = [-22.372568259955813, -41.78151094416016]; // Latitude e Longitude.
+    
+        // Inicializar o mapa.
+        const map = L.map('mapa').setView(padariaCoords, 15);
+    
+        // Adicionar camadas de mapa do OpenStreetMap.
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+    
+        // Adicionar um marcador para a padaria.
+        L.marker(padariaCoords).addTo(map)
+            .bindPopup('Nossa Padaria')
+            .openPopup();
+    </script>
+    <script>
+        document.getElementById("whatsapp-form").addEventListener("submit", function (e) {
+            e.preventDefault(); // Previne o envio padrão do formulário
+    
+            // Captura os valores dos campos
+            const name = document.getElementById("name").value;
+            const message = document.getElementById("message").value;
+    
+            // Número de telefone do WhatsApp (coloque o número do seu negócio)
+            const phoneNumber = "5532984560451"; // Substitua pelo seu número de WhatsApp, incluindo o código do país
+    
+            // Criação da mensagem
+            const whatsappMessage = `Olá, meu nome é ${encodeURIComponent(name)}. ${encodeURIComponent(message)}`;
+    
+            // Construção da URL do WhatsApp
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+    
+            // Redireciona para o WhatsApp
+            window.open(whatsappUrl, "_blank");
+        });
+    </script>
+    
+</body>
+</html>
