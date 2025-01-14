@@ -27,13 +27,16 @@
         <nav class="menu">
             <ul>
                 <li>
+                    <a href="principal.html">Home</a>
+                </li>
+                <li>
                     <a href="sobre.html">Sobre Nós</a>
                 </li>
                 <li>
                     <a href="contato.html">Contato</a>
                 </li>
                 <li>
-                    <a href="cardapio">Cardápio</a>
+                    <a href="cardapio.html">Cardápio</a>
                 </li>
                 <li>
                     <a href="receitas">Dicas</a>
@@ -138,23 +141,6 @@
             // Redireciona para o WhatsApp
             window.open(whatsappUrl, "_blank");
         });
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-    const formulario = document.querySelector("#formulario");
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                formulario.classList.add("active");
-                observer.disconnect(); // Para remover o observador após a primeira ativação
-            }
-        });
-    }, { threshold: 0.2 }); // Ativa quando 20% do formulário aparece na tela
-
-    observer.observe(formulario);
-});
-
     </script>
     
 </body>

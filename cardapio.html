@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gluten:wght@100..900&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sedan+SC&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=favorite" />    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cardapio.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=contact_support" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=contact_support" />       
+    <title>Cardápio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: -webkit-linear-gradient(orange, rgba(247, 162, 4, 0.658), rgba(255, 166, 0, 0.671))
+    ;
+    background-size: cover; /* Faz a imagem cobrir todo o body */
+    background-repeat: no-repeat; /* Impede a repetição da imagem */
+    background-position: center; /* Centraliza a imagem */
+    height: 100%;
+            box-sizing: border-box;
+            overflow-x: hidden ;
+        }
+        header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background-color: #e9892f;
+    position: relative;
+}
+
+.site-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: pink;
+    position: absolute;
+    left: 50%;
+}
+@media (max-width:460px) {
+    .site-name {
+        position: absolute;
+        left: 10rem;
+    }
+}
+.menu-hamburguer {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    transition: all 1s;
+}
+
+.menu-hamburguer:hover {
+    transform: scale(1.1);
+}
+
+.menu-hamburguer .bar {
+    width: 40px;
+    height: 3px;
+    background-color: white;
+}
+
+.menu {
+    display: none; /* Esconda o menu por padrão */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 5px;
+    background-color: rgba(0, 4, 7, 0.418);
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.548);
+    letter-spacing: 3px;
+    text-align: center;
+}
+.menu.active {
+    display: flex;
+}
+        .container1 {
+            display: flex;
+            flex-direction: row;
+            align-self: center;
+        }
+        .legenda {
+            border: 3px solid rgb(205, 212, 216);
+            background-color: #d9ebfa60;
+            border-radius: 20px;
+            text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.322);
+            font-family: "Akaya Telivigala", serif;
+            font-weight: 400;
+            font-size: 26px;
+            text-align: justify;
+            align-self: center;
+            color: white;
+            font-style: normal;
+            width: 60%;
+            margin: 20px;
+            padding: 30px;
+            height: 390px;
+        }
+    
+
+.carousel-container {
+  position: relative;
+  border: 6px solid rgb(123, 195, 236);
+  width: 80%;
+  height: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+}
+
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+@media(max-width: 500px) {
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    .menu ul {
+        gap: 50px;
+    }
+    
+    .container1 {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            justify-content: center;
+            height: auto;
+        }
+        .legenda {
+            border: 3px solid rgb(205, 212, 216);
+            background-color: #d9ebfa60;
+            border-radius: 20px;
+            text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.322);
+            font-family: "Akaya Telivigala", serif;
+            font-weight: 400;
+            font-size: 16px;
+            text-align: center;
+            align-self: center;
+            color: white;
+            font-style: normal;
+            width: 80%;
+            margin: 20px;
+            padding: 10px;
+            height: 50%;
+        }
+        .carousel-item {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+
+.carousel-item img {
+  width: 100%;
+  height: 300px;
+}
+        .carousel-container {
+  position: relative;
+  border: 6px solid rgb(123, 195, 236);
+  width: 294px;
+  height: 300px;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-hamburguer">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="site-name">Padoka</div>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="principal.html">Home</a>
+                </li>
+                <li>
+                    <a href="sobre.html">Sobre Nós</a>
+                </li>
+                <li>
+                    <a href="contato.html">Contato</a>
+                </li>
+                <li>
+                    <a href="cardapio.html">Cardápio</a>
+                </li>
+                <li>
+                    <a href="receitas">Dicas</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container1">
+        <div class="legenda">
+            <h2>Nossos produtos</h2>
+            <p>Nossos doces e salgados são preparados com os 
+                melhoresingredientes, seguindo receitas que combinam
+                 tradição e cuidado em cada detalhe. Cada mordida é
+                  pensada para oferecer uma experiência de sabor 
+                  única, com texturas perfeitas e um toque especial 
+                  de carinho. Aqui, qualidade e frescor são 
+                 prioridade, garantindo produtos que encantam pelo 
+                 sabor e conquistam pela excelência.
+            </p>
+        </div>
+        <div class="carousel-container">
+            <div class="carousel">
+              <div class="carousel-item"><img src="./assets/Bavarois Framboise, Croustillant Chocolat Blanc.jpg" alt="Imagem 1"></div>
+              <div class="carousel-item"><img src="./assets/Brigadeiro.jpg" alt="Imagem 2"></div>
+              <div class="carousel-item"><img src="./assets/Brigadeiros e Doces Gourmet, um Curso Que Está Mudando Vidas.jpg" alt="Imagem 3"></div>
+              <div class="carousel-item"><img src="./assets/Torta de cookie com Nutella_ a receita sensação que deixa qualquer um apaixonado.jpg" alt="Imagem 4"></div>
+            </div>
+            <button class="carousel-button prev">&lt;</button>
+            <button class="carousel-button next">&gt;</button>
+          </div>
+        </section>
+    </main>
+    <script>
+        const carousel = document.querySelector('.carousel');
+const items = document.querySelectorAll('.carousel-item');
+const nextButton = document.querySelector('.carousel-button.next');
+const prevButton = document.querySelector('.carousel-button.prev');
+
+let currentIndex = 0;
+const interval = 8000; // 8 seconds
+
+// Move carousel to the current index
+function updateCarousel() {
+  const offset = -currentIndex * 100;
+  carousel.style.transform = `translateX(${offset}%)`;
+}
+
+// Go to the next image
+function nextImage() {
+  currentIndex = (currentIndex + 1) % items.length;
+  updateCarousel();
+}
+
+// Go to the previous image
+function prevImage() {
+  currentIndex = (currentIndex - 1 + items.length) % items.length;
+  updateCarousel();
+}
+
+// Event listeners for buttons
+nextButton.addEventListener('click', nextImage);
+prevButton.addEventListener('click', prevImage);
+
+// Automatic slide transition
+let autoSlide = setInterval(nextImage, interval);
+
+// Pause auto-slide on button hover
+[nextButton, prevButton].forEach(button => {
+  button.addEventListener('mouseover', () => clearInterval(autoSlide));
+  button.addEventListener('mouseout', () => autoSlide = setInterval(nextImage, interval));
+});
+
+    </script>
+    <script> const hamburguer = document.querySelector('.menu-hamburguer');
+        const menu = document.querySelector('.menu');
+        
+        hamburguer.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+           
+    </script>
+</body>
